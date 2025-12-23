@@ -2,9 +2,13 @@ import cv2
 from camera.stream import CameraStream
 from faces.detect import FaceDetector
 from faces.recognize import FaceRecognizer
+from attendance.timer import PresenceTimer
+from attendance.attendance_log import log_attendance
+
 
 STREAM_URL = "http://192.168.1.9:8080/video"
 
+timer = PresenceTimer(min_duration_sec=30)  # 30 sec for testing
 
 def main():
     camera = CameraStream(STREAM_URL).start()
