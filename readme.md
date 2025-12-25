@@ -1,90 +1,173 @@
-# University Attendance System (Prototype)
+# University Attendance System
 
-A computer vision–based classroom attendance prototype that detects and recognizes students from a live camera feed and marks attendance **only after verified continuous presence**.  
-The system is designed to prevent proxy attendance and reduce manual workload for faculty.
-
-> ⚠️ This repository represents a **functional prototype**, not a production-ready system.
+The **University Attendance System** is a computer vision–based classroom attendance application that detects and recognizes students from a live camera feed and marks attendance only after verified continuous presence. The system is designed to reduce proxy attendance and automate attendance management using AI-driven verification.
 
 ---
 
-## Motivation
+## Overview
 
-In many universities, biometric attendance systems are installed outside classrooms. This allows students to mark attendance without attending lectures, leading to proxy attendance and unethical practices.
-
-This project addresses the problem by shifting attendance logic from **one-time authentication** to **time-based presence verification inside the classroom**.
+The system captures a live classroom video stream, detects and recognizes student faces, tracks their continuous presence, and records attendance only when a predefined time threshold is satisfied. A FastAPI backend manages attendance data, APIs, and database persistence. A frontend interface is planned for future integration.
 
 ---
 
-## Core Idea
+## Core Logic
 
-Attendance is **not marked at entry**.  
-Attendance is marked **only when a student remains continuously present inside the classroom for a minimum duration**, verified using computer vision.
+- Attendance is not marked at entry.
+- Attendance is marked only after continuous verified presence inside the classroom.
+- Presence duration is configurable.
+- Attendance records are stored and auditable.
 
 ---
 
-## Features (Prototype Scope)
+## Features
 
-- Live camera feed ingestion (mobile phone used as IP camera)
-- Real-time face detection using OpenCV
+- Live camera feed ingestion using IP camera
+- Real-time face detection with OpenCV
 - Face recognition using deep-learning embeddings (DeepFace / FaceNet)
-- Continuous presence tracking with configurable time threshold
+- Continuous presence tracking with time thresholds
 - Automatic attendance marking
-- CSV-based attendance logging for auditability
-- Modular and extensible code structure
+- CSV-based attendance export
+- FastAPI backend with REST APIs
+- Database integration using SQLAlchemy
+- Modular and extensible project structure
+- Frontend integration planned
 
 ---
 
-## Tech Stack
+## Technology Stack
 
-- Python 3.10  
-- OpenCV  
-- DeepFace (FaceNet)  
-- NumPy, SciPy  
-- IP Webcam / Mobile Camera (prototype input)
+- **Language:** Python 3.10  
+- **Computer Vision:** OpenCV  
+- **Face Recognition:** DeepFace (FaceNet)  
+- **Backend:** FastAPI  
+- **Database:** SQLAlchemy (SQLite default, configurable)  
+- **Data Processing:** NumPy, SciPy  
+- **Camera Input:** IP Webcam / Mobile Camera  
 
 ---
 
 ## Project Structure
 
+
 University_attendance_system/
+├── backend/
+│ ├── app/
+│ │ ├── main.py
+│ │ ├── database.py
+│ │ ├── models.py
+│ │ ├── schemas.py
+│ │ └── routes/
+│ │ ├── auth.py
+│ │ └── attendance.py
+│ └── requirements.txt
+│
 ├── camera/
 │ └── stream.py
+│
 ├── faces/
 │ ├── detect.py
 │ └── recognize.py
+│
 ├── attendance/
 │ ├── timer.py
 │ └── attendance_log.py
+│
 ├── data/
 │ └── students/
-│ ├── 100/
-│ │ ├── img_01.jpg
-│ │ └── img_02.jpg
-│ └── 101/
-│ └── img_01.jpg
+│
 ├── enroll_student.py
+├── generate_embeddings.py
 ├── main.py
+├── requirements.txt
 └── README.md
 
 
 ---
 
-## How It Works
+## How the System Works
 
 1. **Camera Stream**  
-   A live video stream is received from a phone acting as an IP camera.
+   A mobile phone acts as an IP camera and provides a live video stream.
 
 2. **Face Detection**  
-   Faces are detected in real time using OpenCV.
+   Faces are detected in real time from each frame.
 
 3. **Face Recognition**  
-   Detected faces are matched against stored student photos.
+   Detected faces are matched with enrolled student images.
 
-4. **Presence Timer**  
-   A timer tracks how long each recognized student remains present.
+4. **Presence Tracking**  
+   The system tracks how long each recognized student remains visible.
 
 5. **Attendance Marking**  
-   Attendance is marked only after the defined presence duration is reached.
+   Attendance is recorded only after the presence threshold is reached.
 
-6. **Audit Log**  
-   Attendance records are saved in a CSV file.
+6. **Backend Storage**  
+   Attendance data is stored in the database and can be exported as CSV.
+
+---
+
+## Installation & Usage
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/dipanshuchoudhary-data/University_attendance_system.git
+cd University_attendance_system
+
+2. Create Virtual Environment
+python -m venv venv
+venv\Scripts\activate
+
+3. Install Dependencies
+pip install -r requirements.txt
+cd backend
+pip install -r requirements.txt
+cd ..
+
+4. Configure Camera
+
+Install an IP camera app on a mobile phone
+
+Connect both devices to the same network
+
+Update the stream URL in camera/stream.py
+
+5. Run Backend
+cd backend
+uvicorn app.main:app --reload
+
+
+API documentation:
+
+http://localhost:8000/docs
+
+6. Run Attendance System
+python main.py
+
+Database
+
+Uses SQLite by default
+
+Can be switched to PostgreSQL or MySQL
+
+Configuration available in backend/app/database.py
+
+Configuration
+
+Presence time threshold
+
+Camera stream URL
+
+Database connection string
+
+Future Enhancements
+
+Web-based frontend dashboard
+
+Faculty and admin role management
+
+Real-time attendance visualization
+
+Cloud deployment
+
+Improved recognition accuracy
+
