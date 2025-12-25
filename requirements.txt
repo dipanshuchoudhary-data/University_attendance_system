@@ -1,6 +1,11 @@
-opencv-python
+opencv-python-headless
 numpy
 deepface
 tensorflow
 scipy
 scikit-learn
+fastapi
+tf-keras
+uvicorn
+python-jose[cryptography]
+passlib[bcrypt]

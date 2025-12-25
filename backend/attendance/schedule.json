@@ -1,0 +1,99 @@
+{
+  "Monday": [
+    {
+      "subject": "PFE301 - Professional Ethics and Social Responsibility",
+      "start_time": "12:15",
+      "end_time": "13:10",
+      "faculty": "Dr Mayank Sharma",
+      "room": "I1-311"
+    },
+    {
+      "subject": "CSIT365 - Analysis of Algorithms and Data Structures",
+      "start_time": "13:15",
+      "end_time": "14:10",
+      "faculty": "Dr Garima Bohra",
+      "room": "I1-308"
+    },
+    {
+      "subject": "CSE206 - Fundamental of Machine Learning",
+      "start_time": "14:15",
+      "end_time": "15:10",
+      "faculty": "Dr Ritu Gautam",
+      "room": "I1-308"
+    },
+    {
+      "subject": "SW102 - Human Values and Community Outreach",
+      "start_time": "15:15",
+      "end_time": "16:10",
+      "faculty": "Dr Garima Bohra"
+    }
+  ],
+
+  "Tuesday": [
+    {
+      "subject": "CEC105 - General Aptitude – Level 2",
+      "start_time": "11:15",
+      "end_time": "12:10",
+      "faculty": "Mr Giri Ratan Gaur",
+      "room": "F1-G01"
+    },
+    {
+      "subject": "CEC230 - General Aptitude Reasoning Ability (GARA)",
+      "start_time": "12:15",
+      "end_time": "13:10",
+      "faculty": "Mr Pyari Mohan Parida",
+      "room": "F1-G02"
+    },
+    {
+      "subject": "BS208 - Creativity for Team Excellence",
+      "start_time": "13:15",
+      "end_time": "14:10",
+      "faculty": "Ms Sugandh Katyal",
+      "room": "I1-G05"
+    },
+    {
+      "subject": "CSE206 - Fundamental of Machine Learning",
+      "start_time": "15:15",
+      "end_time": "16:10",
+      "faculty": "Dr Ritu Gautam"
+    }
+  ],
+
+  "Wednesday": [
+    {
+      "subject": "CSE206 - Fundamental of Machine Learning",
+      "start_time": "12:15",
+      "end_time": "13:10",
+      "faculty": "Dr Ritu Gautam",
+      "room": "I1-302"
+    },
+    {
+      "subject": "CSIT365 - Analysis of Algorithms and Data Structures",
+      "start_time": "13:15",
+      "end_time": "14:10",
+      "faculty": "Dr Garima Bohra",
+      "room": "I2-307"
+    },
+    {
+      "subject": "CSIT365 - Analysis of Algorithms and Data Structures",
+      "start_time": "14:15",
+      "end_time": "15:10",
+      "faculty": "Dr Garima Bohra",
+      "room": "I2-307"
+    },
+    {
+      "subject": "CSE206 - Fundamental of Machine Learning",
+      "start_time": "15:15",
+      "end_time": "16:10",
+      "faculty": "Dr Ritu Gautam",
+      "room": "I1-306"
+    },
+    {
+      "subject": "CSIT365 - Analysis of Algorithms and Data Structures",
+      "start_time": "16:15",
+      "end_time": "17:10",
+      "faculty": "Dr Garima Bohra",
+      "room": "I1-306"
+    }
+  ]
+}

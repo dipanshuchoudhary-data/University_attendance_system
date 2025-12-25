@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Packages
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Mac OS
+.DS_Store
+
+# Windows thumbnails
+Thumbs.db
+
+# OpenCV cache
+*.npy
